@@ -1,14 +1,15 @@
-<h1><%= @article.title %></h1>
+<h1 class ='header'><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<p class = 'body'><%= @article.body %></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <td><%= button_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %></td>
+  <li><%= link_to 'Edit', edit_article_path(@article) %></li>
+  <td><%= button_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
 </ul>
-
-<h2>Comments</h2>
+<div class = 'comments'>
+<h2 class = 'title'>Comments</h2>
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<h2 class = 'title'>Add a comment:</h2>
 <%= render 'comments/form' %>
+</div>
