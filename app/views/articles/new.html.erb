@@ -1,3 +1,11 @@
 <h1>New Article</h1>
 
-<%= render "form", article: @article %>
+<% if current_user%>
+  <%= render "form", article: @article %>
+<% else%>
+  <p> You need to be logged to create a new article pls sign in with your acount or sing up down below</p>
+  <%= link_to "Sing in", new_user_session_path %>
+  <br />
+  <%= link_to "Sing up", new_user_registration_path %>
+<% end %>
+  
