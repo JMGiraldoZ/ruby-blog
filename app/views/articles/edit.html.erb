@@ -1,3 +1,10 @@
 <h1>Edit Article</h1>
-
-<%= render "form", article: @article %>
+<% if current_user.id == @article.id%>
+  <%= render "form", article: @article %>
+<% elsif current_user %>
+  <p> You need to be logged to edit an article pls sing in with your account </p>
+  <%= link_to "Sing in", new_user_session_path %>
+<% else%>
+  <p> You need to be the article author to edit it </p>
+  <%= link_to 'Sing out', destroy_user_session_path, 'data-turbo-method': :delete%>
+<% end %>
