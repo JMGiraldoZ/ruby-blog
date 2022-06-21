@@ -13,8 +13,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    #@article = Article.new(article_params)
-    #@article.user_id = current_user
     @user = current_user
     @article = @user.articles.create(article_params)
     puts @article.title
