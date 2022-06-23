@@ -8,6 +8,7 @@ body {
 .header{
   padding-top: 20px;
   text-align:center;
+  font-size: larger;
 }
 
 .title{
@@ -25,4 +26,29 @@ ul{
 
 li{
   line-height: 1.5rem;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid gray;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+}
+
+.comment-box{
+  padding-top: 40px;
+  font-size: large;
 }
